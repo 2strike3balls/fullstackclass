@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오, 체크박스, 버튼</title>
+    <style>
+        ul li {padding:30px 0;}
+        input {display:none;} /* 박스를 제거한다. */
+        label {padding:10px 20px; border:1px solid greenyellow;}
+        input:checked + label {border:1px solid green;}
+    </style>
+</head>
+<body>
+    <h3>회원가입</h3>
+    <form action="check.jsp">
+        <ul>
+            <li>
+                <input id="m" type="radio" name="gender" value="남자" checked>
+                <label for="m">남자</label>
+                <input id="w" type="radio" name="gender" value="여자">
+                <label for="w">여자</label>
+            </li>
+            <li>
+                <input id="g1" type="radio" name="grade" value="1학년" checked>
+                <label for="g1">1학년</label>
+                <input id="g2" type="radio" name="grade" value="2학년">
+                <label for="g2">2학년</label>
+                <input id="g3" type="radio" name="grade" value="3학년">
+                <label for="g3">3학년</label>
+            </li>
+            <li>
+                <input id="s1" type="checkbox" name="subject" value="HTML5" checked>
+                <label for="s1">HTML5</label>
+                <input id="s2" type="checkbox" name="subject" value="CSS3">
+                <label for="s2">CSS3</label>
+                <input id="s3" type="checkbox" name="subject" value="JavaScript">
+                <label for="s3">JavaScript</label>
+                <input id="s4" type="checkbox" name="subject" value="jQuery">
+                <label for="s4">jQuery</label>
+            </li>
+            <li>
+                <button type="button" onclick="alert('버튼을 눌렀습니다.')">버튼</button>
+                <button type="submit">제출</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 시작</title>
+    <style>
+        .text { color:red; }
+    </style>
+    <script>
+        // 프로그래머는 '데이터'를 전산적으로 처리(연산자와 제어문)하는 사람이다.
+        // 변수 선언 : 메모리에 저장 공간을 만드는 것이다. 변수 선언 시 반드시 있어야 하는 것은 '변수명'이다.
+        var str = '안녕하세요.';
+
+        var date = new Date();
+        //document.write(date.getHours());
+        var hour = date.getHours();
+
+        if (hour >= 18) {
+            str = '오늘도 수고하셨습니다.';
+        } else if (hour >= 12) {
+            str = '식사 맛있게 하세요.';
+        } else if (hour >= 8) {
+            str = '좋은 아침입니다.';
+        }
+
+        document.write('<p class="text">안녕하세요.</p>');
+        document.write('<p class="text">' + '안녕하세요.' + '</p>');
+        document.write('<p class="text">' + str + '</p>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

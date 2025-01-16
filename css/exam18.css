@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.pbox {
+    position: relative; /* body 요소에 있는 박스의 기준점(좌상)을 .pbox로 가져온다. */
+    width: 400px; height: 30vh; margin: 100px auto;
+    background: lightpink;
+    /* overflow: hidden; 박스 영역 바깥쪽에 있는 부분을 안보이게 설정한다. */
+    /* overflow: scroll; 박스 영역 바깥쪽 부분을 스크롤로 처리한다. */
+    overflow-y: scroll; /* 박스 영역 바깥쪽 부분의 y축에만 스크롤를 생성한다. */
+}
+.cbox {
+    position: absolute;
+    width: 250px; height: 250px;
+}
+.box1 {
+    left: 25px; top: 25px;
+    background: rgba(80, 210, 210, 0.8);
+}
+.box2 {
+    right: 75px; top: 75px;
+    background: rgba(200, 210, 80, 0.8); z-index: 1;
+}
+.box3 {
+    left: 50px; top: 50px;
+    background: rgba(80, 210, 120, 0.8);
+}
+
+
+
+/* center 박스를 웹 브라우저의 중앙에 배치 */
+.center {
+    position: absolute; left:50%; top:50%;
+    width: 300px; height: 200px; margin: -100px 0 0 -150px;
+    background: orange; z-index:2;
+}

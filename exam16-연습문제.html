@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main p { color: #fff; background: rgb(70, 5, 5); }
+        #main div { background: rgb(210, 230, 150); }
+        #main ul li:last-child { color: green; }
+        .text { font-size:24px; color: blue; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div id="main">
+        div 요소의 아이디 #main
+        <p>선택자_1</p>
+        <div>아이디 #main 하위의 div 요소</div>
+        <ul>
+            <li>클래스 선택자</li>
+            <li>아이디 선택자</li>
+            <li>속성 선택자</li>
+        </ul>
+        <p>선택자_2</p>
+    </div>
+    <p class="text">선택자_3</p>
+
+    <style>
+        .green-box { padding:50px; background: yellow; }
+        h2, h3, h4 { font-size:24px; }
+        h2 { color: green; }
+        h3 { color: blue; }
+        h4 { color: red; }
+    </style>
+    <div class="green-box">
+        <h2>가벼운 마음으로 배우는 녹색</h2>
+        <h3>가벼운 마음으로 배우는 파란색</h3>
+        <h4>가벼운 마음으로 배우는 빨간색</h4>
+    </div>
+</body>
+</html>

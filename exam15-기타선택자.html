@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .pbox { width: 300px; height: 300px; background: lightcoral; }
+        .pbox > div { background: aquamarine; }
+        .pbox > div div { background: red; }
+    </style>
+    <h3>자식 선택자와 후손 선택자</h3>
+    <div class="pbox">
+        <div>
+            child
+            <div>child-child</div>
+            <div>child-child</div>
+            <div>child-child</div>
+        </div>
+        <div>child</div>
+        <div>child</div>
+        <div>child</div>
+    </div>
+
+    
+    <style>
+        .box1, .box2 { width: 200px; height: 100px; }
+        /* 그룹 선택자 : 공통 스타일 시트 */
+        .box1 { background: green; } /* 계별 스타일 시트 */
+        .box2 {background: red; }
+    </style>
+    <h3>그룹 선택자</h3>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+
+    <style>
+        .box { width: 300px; height: 50px; }
+        .bro1 { background: orange; }
+        .bro2 { background: orangered; }
+        .bro3 { background: olive; }
+        .bro4 { background: orchid; }
+
+        .bro1 + div { background: red; }
+        /* .bro1 ~ div { background: red; } */
+    </style>
+    <h3>형제 인접 선택자와 형제 선택자</h3>
+    <div class="box bro1"></div>
+    <div class="box bro2"></div>
+    <div class="box bro3"></div>
+    <div class="box bro4"></div>
+</body>
+</html>

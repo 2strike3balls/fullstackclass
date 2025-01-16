@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        ul li { list-style:none; }
+        a { display:block; color:#f6f6f6; text-decoration:none; }
+
+
+        nav, #main-menu { display:flex; justify-content:center; }
+        nav {
+            position:fixed; left:0; top:0;
+            width:100%; height:50px; background:#222;
+        }
+
+        #main-menu > li { position:relative; height:50px; }
+        #main-menu > li > a { height:100%; padding:0 15px; line-height:48px; }
+
+        .sub-menu {
+            display:none;
+            position:absolute; left:0; top:50px;
+            width:140px; padding:10px 0;
+            text-align:center;
+            background:#222; border-radius:0 0 10px 10px;
+        }
+        .sub-menu a { padding:0 0 10px 0; }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            // 제이쿼리 함수($('선택자'))의 역할은 요소를 선택해서 스크립트 영역으로 가져온다.
+            $('#main-menu > li').mouseenter(function(){
+                $(this).find('.sub-menu').stop().slideDown();
+                // $(this) : 이벤트가 발생한 이벤트 대상을 선택한다.
+                // find('선택자')는 이벤트 대상의 자식 요소 중 선택자에 해당하는 요소를 선택한다.
+                // stop()는 모든 효과를 제거한다.
+                // slideDown()는 선택한 요소를 아래로 이동시키면서 보여준다.(이벤트 효과 메소드)
+            });
+            $('#main-menu > li').mouseleave(function(){
+                $(this).find('.sub-menu').stop().slideUp();
+                // slideUp()는 선택한 요소를 위로 올리면서 안보이게 한다.(이벤트 효과 메소드)
+                // 이벤트 대상.메소드명().메소드명().메소드명(); 메소드 체이닝
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul id="main-menu">
+            <li>
+                <a href="#">main-menu01</a>
+                <ul class="sub-menu">
+                    <li><a href="#">sub-menu01</a></li>
+                    <li><a href="#">sub-menu02</a></li>
+                    <li><a href="#">sub-menu03</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">main-menu02</a>
+                <ul class="sub-menu">
+                    <li><a href="#">sub-menu01</a></li>
+                    <li><a href="#">sub-menu02</a></li>
+                </ul>
+            </li>
+            <li><a href="#">main-menu03</a></li>
+            <li><a href="#">main-menu04</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

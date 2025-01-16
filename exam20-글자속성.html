@@ -1,0 +1,76 @@
+<!--
+※ 글자 서체 지정(font-family)
+1. fonts.google.com 에서 웹 폰트를 적용하는 방법
+2. 사용할 웹 폰트를 직접 제작한 후 서버에 저장하여 적용하는 방법
+
+※ 더미 텍스트 사용 방법
+- 웹에서 '한글로렘입숨'으로 검색한다.
+- 한글로렘입숨에서 더미 텍스트를 얻는다.
+
+※ 문장 끝에 ... 표시
+1. white-space: nowrap; 문장의 줄바꿈을 제거한다.
+2. text-overflow: ellipsis; 문장이 부모박스를 벗어나면 ... 표시한다.
+3. overflow: hidden; 부모 박스의 범위를 벗어나면 안보이게 설정한다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자속성</title>
+    <style>
+        /*
+            서체 : font-family 속성
+            크기 : font-size 속성(px, em, rem)
+            색상 : color 속성(#RRGGBB, rgb(0~255, 0~255, 0~255), rgba(0~255, 0~255, 0~255, 0~1))
+            굵기 : font-weight 속성(100~400~900, bold)
+            수평 정렬 : text-align 속성(left(기본값), center, right)
+            언더바 : text-decoration 속성(none)
+            영문 대/소문자 지정 : text-transform 속성(uppercase(대문자), capitalize(첫글자만 대문자))
+            그림자 : text-shadow 속성(가로그림자크기 세로그림자크기 번짐 그림자색상)
+            자간 : letter-spacing 속성(px)
+            행간 : line-height 속성(px)
+        */
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        /*
+        font-family: "Gowun Batang", serif;
+        font-family: "Noto Sans KR", serif;
+        */
+        .gb {
+            width: 350px;
+            font-family: "Gowun Batang", serif; font-size:24px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            background: orange;
+        }
+        .nt { font-family: "Noto Sans KR", serif; font-size:42px; }
+
+        /* 웹폰트를 직접 제작하여 사용할 때는 @font-face를 사용한다. */
+        @font-face {
+            font-family: "chosunSm";
+            src: url('fonts/ChosunSm.eot');
+            src: url('fonts/ChosunSm.woff') format('woff');
+            /* 크로스 브라우징(웹 브라우저 호환성) 코딩 작업 */
+        }
+        .face {
+            font-family: "chosunSm"; font-size:24px; color:#06f; font-weight:bold;
+            text-align:center; text-transform:uppercase; text-decoration:underline;
+            letter-spacing: 5px; line-height:38px;
+        }
+        .face span { color:#fc0; text-shadow:1px 1px 2px #000; }
+    </style>
+</head>
+<body>
+    <p class="gb">
+        요즘의 등 신용은 느끼는가 집중에서, 있다. 원칙의 상호다 사정을, 31일 석궁은 방심하지 방향의 이는 복원하다.
+    </p>
+    <p class="face">
+        It is a <span>long established</span> fact that a reader will be distracted by the readable content of a page when looking at its layout.
+    </p>
+    <p class="nt">
+        요즘의 등 신용은 느끼는가 집중에서, 있다. 원칙의 상호다 사정을, 31일 석궁은 방심하지 방향의 이는 복원하다.
+    </p>
+</body>
+</html>

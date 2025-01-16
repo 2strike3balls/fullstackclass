@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인 정보 입력</title>
+    <style>
+        ul li {list-style:none; padding:10px 0;}
+        /*
+        #m, #w, #a1, #a2, #j1, #j2, #j3, #j4 {display:none;}
+        #은 아이디 선택자, id 이름으로 박스를 선택한다.
+        */
+        input[type="radio"], input[type="checkbox"] {display:none;}
+        /* 속성 선택자 : 속성과 속성값으로 박스를 선택한다. */
+        .gender {padding:5px 10px; border:1px solid greenyellow;} /* . 은 클래스 선택자, class 이름으로 박스를 선택한다. */
+        input:checked + label {border:1px solid green;}
+        .box label {padding:5px 10px; border:1px solid lightblue;}
+        .box input:checked + label {border:1px solid blue;}
+    </style>
+</head>
+<body>
+    <h3>개인 정보 입력</h3>
+    <form action="join.jsp" method="post">
+        <!-- 데이터 전달 방식을 post로 지정하면 내장 객체인 request 객체에 저장된다. -->
+        <ul>
+            <li>
+                <input type="text" name="id" placeholder="아이디 입력" required autofocus>
+                <button type="button">아이디 중복 검사</button>
+            </li>
+            <li>
+                <label>생 일</label>
+                <input type="date" name="birth" required>
+            </li>
+            <li>
+                성별 : 
+                <input id="m" type="radio" name="gender" value="남자" checked>
+                <label for="m" class="gender">남자</label>
+                <input id="w" type="radio" name="gender" value="여자">
+                <label for="w" class="gender">여자</label>
+            </li>
+            <li><input type="email" name="email" placeholder="이메일 입력"></li>
+            <li>
+                <input id="a1" type="radio" name="assent" value="동의" checked>
+                <label for="a1" class="gender">메일 수신 동의</label>
+                <input id="a2" type="radio" name="assent" value="거부">
+                <label for="a2" class="gender">메일 수신 거부</label>
+            </li>
+            <li><input type="tel" name="phone" placeholder="휴대폰 번호 입력"></li>
+            <li class="box">
+                직업 : 
+                <input id="j1" type="radio" name="job" value="학생" checked>
+                <label for="j1">학생</label>
+                <input id="j2" type="radio" name="job" value="회사원">
+                <label for="j2">회사원</label>
+                <input id="j3" type="radio" name="job" value="연구원">
+                <label for="j3">연구원</label>
+                <input id="j4" type="radio" name="job" value="영업">
+                <label for="j4">영업</label>
+            </li>
+            <li class="box">
+                취미 : 
+                <input id="h1" type="checkbox" name="hobby" value="쇼핑" checked>
+                <label for="h1">쇼핑</label>
+                <input id="h2" type="checkbox" name="hobby" value="게임">
+                <label for="h2">게임</label>
+                <input id="h3" type="checkbox" name="hobby" value="음악감상">
+                <label for="h3">음악감상</label>
+                <input id="h4" type="checkbox" name="hobby" value="스포츠">
+                <label for="h4">스포츠</label>
+            </li>
+            <li><textarea name="info">자기소개</textarea></li>
+            <li>
+                <button type="submit">회원가입</button>
+                <button type="reset">다시쓰기</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

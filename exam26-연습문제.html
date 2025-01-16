@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*===== 연습문제 5 =====*/
+        .darkgreen {
+            width:200px; height:200px;
+            background:darkgreen;
+            transition:all 0.4s ease-in;
+        }
+        .darkgreen:hover { background:lightgreen; transform:scale(2); }
+
+        /*===== 연습문제 6 =====*/
+        .darkblue { 
+            width:200px; height:200px; margin:100px 0;
+            background:darkblue;
+            transition:all 0.4s ease-in;
+        }
+        .darkblue:hover { transform:translate(350px, 0) rotate(45deg); }
+
+        /*===== 연습문제 7 =====*/
+        .box {
+            position:relative;
+            width:300px; height:300px;
+            border-radius:50%; overflow:hidden;
+            animation:move 2s ease-in-out infinite normal;
+        }
+        .box div {
+            position:absolute;
+            width:150px; height:150px;
+        }
+        .blue { left:0; top:0; background:blue; }
+        .yellow { left:150px; top:0; background:yellow; }
+        .red { left:150px; top:150px; background:red; }
+        .green { left:0; top:150px; background:green; }
+
+        @keyframes move {
+            0% { transform:rotate(0); }
+            25% { transform:rotate(90deg); }
+            50% { transform:rotate(180deg); }
+            75% { transform:rotate(270deg); }
+            100% { transform:rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="darkgreen"></div>
+
+    <div class="darkblue"></div>
+
+    <div class="box">
+        <div class="blue"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="green"></div>
+    </div>
+</body>
+</html>

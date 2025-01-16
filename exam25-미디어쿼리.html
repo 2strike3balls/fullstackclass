@@ -1,0 +1,42 @@
+<!--
+※ 미디어쿼리 '중단점' 지정
+디바이스별 디스플레이 해상도 영역을 지정한다.
+1. FHD(1920px) : 1400px 이상
+2. HD(1024px) : 1000px 이상 1399px 이하
+3. TB(768px) : 700px 이상 999px 이하
+4. SM(375px) : 699px 이하
+
+@media screen and (min-width:1400px) {
+디바이스는 디스플레이이고 해상도는 1400px 이상 영역이다.
+}
+@media screen and (min-width:1000px) and (max-width:1399px) {
+디바이스는 디스플레이이고 해상도는 1000px 이상 1399px 이하 영역이다.
+}
+@media screen and (min-width:700px) and (max-width:999px) {
+디바이스는 디스플레이이고 해상도는 700px 이상 999px 이하 영역이다.
+}
+@media screen and (max-width:699px) {
+디바이스는 디스플레이이고 해상도는 699px 이하 영역이다.
+}
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+    <link rel="stylesheet" href="css/exam25.css">
+</head>
+<body>
+    <section>
+        <div class="bg"></div>
+        <div class="contents">
+            <h3>sunflower</h3>
+            <p>
+                해바라기(영어: Helianthus 또는 sunflower)는 국화과에 속하는 일년생 식물로, 꽃은 두상화(頭狀花)이다. 한자로 규곽(葵藿), 규화(葵花), 향일화(向日花)라고 하며 해바라기속에 속하는 다른 여러해살이풀도 보통 해바라기라 부른다.
+            </p>
+            <a href="#">more</a>
+        </div>
+    </section>
+</body>
+</html>

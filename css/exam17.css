@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.box {
+    width: 300px; 
+    /* margin: 100px; */
+    /* margin: 100px auto; */
+    /* margin: 50px auto 100px; */
+    margin: 50px 100px 150px 200px;
+    /* padding:50px; top right bottom left */
+    /* padding: 50px 100px; top/bottom left/right */
+    /* padding: 50px 100px 25px; top left/right bottom */
+    padding: 25px 50px 100px 150px;
+    /* text-align: center; line-height: 200px; 텍스트 수평, 수직 정렬 */
+    background: orange;
+}
+
+
+
+nav { height: 60px; background: #000; }
+ul.menu {
+    display: flex; justify-content: center; align-items: center;
+    /* ★플랙스 박스 모델은 자식 요소를 좌에서 우로 배치할 때 사용한다. */
+    /* display: flex; 자식 요소를 좌에서 우로 배치한다. */
+    /* justify-content 속성은 수평 정렬를 지정한다. center(중앙), space-between(양끝) */
+    /* align-items 속성은 수직 정렬을 지정한다. center(중앙) */
+    width: 400px; height: 100%; margin:0 auto;
+}
+ul.menu li { list-style: none; width:100px; text-align: center; }
+ul.menu li a { color: orange; text-decoration: none; /* 텍스트 언더바 제거 */ }
+ul.menu li a:hover { color: #fff; }

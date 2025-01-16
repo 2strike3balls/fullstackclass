@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 요소 - 메뉴</title>
+    <style>
+        div {height:300px; margin-top:1000px; background:#fc0;}
+    </style>
+</head>
+<body>
+    <p>'하이퍼 링크'는 웹 페이지를 전환할 때 사용하며, a 태그의 href 속성으로 구현한다.</p>
+    <p>메뉴가 많을 경우 a 태그를 연속으로 사용하게 되므로 목록(ul) 항목(li) 태그로 구현한다.</p>
+
+    <h3>메뉴</h3>
+    <ul id="top">
+        <li><a href="http://www.naver.com" target="_blank">&copy;네이버</a></li>
+        <li><a href="http://www.daum.net">다&nbsp;&nbsp;&nbsp;&nbsp;음</a></li>
+        <li><a href="exam01-기본문서.html">HTML 기본 문서</a></li>
+        <li><a href="exam02-웹콘텐츠를저장하는태그.html">웹콘텐츠를 저장하는 태그</a></li>
+        <li><a href="#box">오랜지 박스로 이동</a></li><!-- 내부 링크 -->
+        <li><a href="tel:010-4606-1826">010-4606-1826</a></li>
+        <li><a href="javascript:hello('안녕! 자바스크립트')">인사</a></li>
+    </ul>
+
+    <h3>버튼</h3>
+    <button onclick="script()">버튼</button>
+
+    <div id="box"><a href="#top">top</a></div>
+    <script>
+        function hello(str) { // 변하는 데이터를 저장하는 공간을 '변수'라고 한다.
+            // 변수에 저장된 값을 확인하는 방법
+            // 1. 경고창을 사용하는 방법
+            alert(str); // str 변수의 값을 경고창에 출력한다.
+            // 2. 콘솔에 출력하는 방법
+            console.log(str); // str 변수의 값을 콘솔에 출력한다.
+        }
+
+        function script() {
+            console.log('버튼을 눌렀습니다.');
+        }
+    </script>
+</body>
+</html>

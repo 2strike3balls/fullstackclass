@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 선택자</title>
+    <style>
+        .box {
+            position: relative; height: 300px;
+            background: orange;
+        }
+        .box::before {
+            content: attr(data-text); /* content 속성값은 생략 */
+            position: absolute; top: 0;
+            width:100px; height:40px; background: red;
+        }
+        .box::after {
+            content: '';
+            position: absolute; bottom: 0;
+            width:100px; height:40px; background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" data-text="Before"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글맵</title>
+</head>
+<body>
+    <p>1. 브라우저에서 구글맵으로 검색</p>
+    <p>2. Google Maps 클릭</p>
+    <p>3. 원하는 지역을 검색</p>
+    <p>4. 왼쪽 상단의 메뉴(트리거)를 클릭</p>
+    <p>5. 지도 공유 또는 퍼가기를 클릭</p>
+    <p>6. 지도 퍼가기를 클릭</p>
+    <p>7. 오른쪽의 HTML 복사 버튼을 클릭</p>
+    <p>8. 부모 요소를 생성하고 부모 요소 내부에 코드를 붙여넣는다.</p>
+    <p>9. iframe 요소의 width, height, style 속성을 제거</p>
+
+    <style>
+        .map { width:100%; height:400px; }
+        .map iframe { width:100%; height:100%; border:0; }
+    </style>
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.672266103749!2d127.10743371132489!3d37.35026697197907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b59c5d7697313%3A0xbba08f656485ef2c!2z7J207KCg7JWE7Lm0642w66-47Lu07ZOo7YSw7ZWZ7JuQIOyEseuCqOu2hOuLueygkA!5e0!3m2!1sko!2skr!4v1736929158373!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 프로그램</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/script.js"></script>
+    <style>
+        .pbox {
+            display:flex; align-items:center;
+            width:600px; height:150px; margin:50px auto;
+        }
+        .pbox div { width:50%; height:100%; }
+        input { display:block; border:0; outline:0; }
+        .input-form {
+            width:135px; height:40px; margin:0 10px; padding:0 15px;
+            border:2px solid #06f; border-radius:20px;
+        }
+        .input-form:focus { background:#fc0; }
+    </style>
+</head>
+<body>
+    <div class="pbox">
+        <div>
+            <p>질문1 : 대한민국의 수도는 어디입니까?</p>
+            <button type="button" id="q1Btn">정답보기/안보기</button>
+            <p class="a1">대한민국의 수도는 <span>서울</span>입니다.</p>
+        </div>
+        <div>
+            <p>질문2 : 대한민국의 국보 1호는 무엇입니까?</p>
+            <button type="button" id="q2Btn">정답보기</button>
+            <p class="a2">대한민국의 국보 1호는 <span>숭례문</span>입니다.</p>
+        </div>
+    </div>
+</body>
+</html>

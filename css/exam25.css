@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap');
+/* font-family: "Mystery Quest", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+/* font-family: "Jua", serif; */
+
+
+* { margin:0; padding:0; box-sizing:border-box; }
+h1, h2, h3, h4, h5, h6 { font-family: "Mystery Quest", serif; }
+p { font-family: "Jua", serif; }
+a { display:inline-block; text-decoration:none; border:0; outline:0; }
+
+
+@media screen and (min-width:1400px) {
+    section {
+        display:flex;
+        width:1350px; margin:50px auto;
+    }
+    section div { width:50%; }
+    .bg {
+        height:350px;
+        background:url('../imgs/bg2.jpg') no-repeat center center;
+    }
+    .contents { padding:50px 0 0 50px; }
+    h3 { font-size:42px; color:#06f; font-weight:400; text-transform:uppercase; }
+    .contents p { padding:30px 0 50px 0; }
+    .contents a {
+        padding:10px 20px;
+        font-size:18px; color:#333; text-transform:uppercase;
+        border:2px solid #06f; border-radius:10px;
+    }
+    .contents a:hover { color:#f6f6f6; background:#06f; }
+}
+@media screen and (min-width:1000px) and (max-width:1399px) {
+    section {
+        display:flex;
+        width:980px; margin:50px auto;
+    }
+    section div { width:50%; }
+    .bg {
+        height:350px;
+        background:url('../imgs/bg2.jpg') no-repeat center center;
+    }
+    .contents { padding:50px 0 0 50px; }
+    h3 { font-size:36px; color:#06f; font-weight:400; text-transform:uppercase; }
+    .contents p { padding:20px 0 50px 0; }
+    .contents a {
+        padding:10px 20px;
+        font-size:18px; color:#333; text-transform:uppercase;
+        border:2px solid #06f; border-radius:10px;
+    }
+    .contents a:hover { color:#f6f6f6; background:#06f; }
+}
+@media screen and (min-width:600px) and (max-width:999px) {
+    section { display:flex; margin:50px 15px; }
+    .bg {
+        width:40%; height:350px;
+        background:url('../imgs/bg2.jpg') no-repeat center center;
+        background-size:cover; border-radius:20px 0 0 20px;
+    }
+    .contents {
+        position:relative;
+        width:60%; height:350px; padding:40px;
+        background:rgb(220, 240, 245); border-radius:0 20px 20px 0;
+    }
+    h3 { font-size:36px; color:#06f; font-weight:400; text-transform:uppercase; }
+    .contents p { padding:15px 0 40px 0; }
+    .contents a {
+        position:absolute; left:40px; bottom:40px;
+        padding:10px 20px;
+        font-size:18px; color:#333; text-transform:uppercase;
+        border:2px solid #06f; border-radius:10px;
+    }
+    .contents a:hover { color:#f6f6f6; background:#06f; }
+}
+@media screen and (max-width:599px) {
+    section { margin:40px 10px; }
+    .bg {
+        height:200px;
+        background:url('../imgs/bg2.jpg') no-repeat center center;
+        background-size:cover; border-radius:20px 20px 0 0;
+    }
+    .contents {
+        position:relative;
+        height:300px; padding:30px;
+        background:rgb(220, 240, 245); border-radius:0 0 20px 20px;
+    }
+    h3 {
+        font-size:32px; color:#06f; font-weight:400;
+        text-align:center; text-transform:uppercase;
+    }
+    .contents p { padding:15px 0 40px 0; }
+    .contents a { /* 박스의 너비값을 알 수 없을 때 중앙 정렬 */
+        position:absolute; left:50%; bottom:30px;
+        padding:10px 20px;
+        font-size:18px; color:#333; text-transform:uppercase;
+        border:2px solid #06f; border-radius:10px;
+        transform:translate(-50%, 0);
+    }
+    .contents a:hover { color:#f6f6f6; background:#06f; }
+}

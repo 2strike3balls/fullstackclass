@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexSlider Basic Slider</title>
+    <link rel="stylesheet" href="flexslider/flexslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="flexslider/fs-slider.css">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="flexslider/jquery.flexslider.js"></script>
+    <script>
+        $(function(){
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <div class="fs-itemBg fs-itemBg1"></div>
+                <div class="fs-cotents">
+                    <h2>adventurer caramel</h2>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <a href="#" class="fs-btn">more</a>
+                </div>
+            </li>
+            <li>
+                <div class="fs-itemBg fs-itemBg2"></div>
+                <div class="fs-cotents">
+                    <h2>adventurer donut</h2>
+					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <a href="#" class="fs-btn">more</a>
+                </div>
+            </li>
+            <li>
+                <div class="fs-itemBg fs-itemBg3"></div>
+                <div class="fs-cotents">
+                    <h2>adventurer lemon</h2>
+					<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+                    <a href="#" class="fs-btn">more</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

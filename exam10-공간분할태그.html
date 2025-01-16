@@ -1,0 +1,43 @@
+<!--
+요소(박스)는 '블록형'과 '인라인형(a 태그, span 태그, input 태그, label 태그 등)', '인라인-블록형(img 태그)'이 있다.
+※ 블록형 : 너비값 : 100%(기본값), 높이값 : 0(기본값), 줄바꿈, 레이아웃 스타일 속성 적용
+※ 인라인형 : 너비값 : 0(기본값), 높이값 : 0(기본값), 줄바꿈 안함(좌 > 우), 레이아웃 스타일 속성 적용 안됨
+
+※ 공간 분할 태그
+1. 시맨틱 태그: header, nav, section, article, aside, footer(블록형)
+2. div 태그(블록형)
+3. span 태그(인라인형) : h 태그와 p 태그 내부에 사용한다.
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공간 분할 태그</title>
+    <style>
+        /*선택자 { 스타일속성:스타일값; 스타일속성:스타일값; }*/
+        span { color:orange; }
+        /*클래스 선택자인 . 으로 요소를 선택한다.*/
+        .pbox {
+            display:flex; height:200px;
+            background:orange;
+        }
+        .left { width:50%; height:100px; background:lightblue; }
+        .right { width:50%; height:100px; background:lightcoral; }
+        h3, p { text-align:center; }
+    </style>
+</head>
+<body>
+    <h2>공간 <span>분할</span> 태그</h2>
+    <div class="pbox"><!--클래스명을 부여-->
+        <div class="left">
+            <h3>left</h3>
+            <p>왼쪽 박스이다.</p>
+        </div>
+        <div class="right">
+            <h3>right</h3>
+            <p>오른쪽 박스이다.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+.box {
+    position: relative;
+    width: 600px; height: 400px; margin: 100px auto;
+    background: #eee;
+}
+.cbox {
+    position: absolute;
+    /* position: absolute 또는 fixed 로 지정하면 블록형 박스의 width 값이 0으로 바뀐다. */
+    transition: all 0.3s ease-in;
+    /* 박스의 처음 상태에서 나중 상태로 변경되는 중간 상태를 자동으로 생성한다. */ 
+}
+.orange, .blue { width:50px; height:100%; }
+.red, .green { width: 100%; height:50px; }
+
+/*===== 박스의 처음 상태 =====*/
+.black {
+    left:50%; top:50%;
+    width: 100px; height: 100px; margin: -50px 0 0 -50px;
+    background: #000;
+}
+.orange {
+    left:0; top:0;
+    background: orange;
+}
+.green {
+    left:0; bottom:0;
+    background: green;
+}
+.blue {
+    right:0; top:0;
+    background: blue;
+}
+.red {
+    left:0; top:0;
+    background: red;
+}
+.small-orange {
+    left:0; top:0;
+    width: 50px; height: 50px;
+    background: orange;
+}
+
+/*===== 박스의 종료 상태 =====*/
+.box:hover .orange { left: 250px; }
+.box:hover .small-orange { left: 250px; top: 150px; }
+.box:hover .green { bottom: 150px; }
+.box:hover .blue { right: 250px; }
+.box:hover .red { top: 150px; }
+
+
+
+
+
+.fixed {
+    position: fixed; left:0; top:0;
+    width:100%; height:60px;
+    background: #fc0; z-index:9;
+}
+.dbox { height:1000px; }
+        

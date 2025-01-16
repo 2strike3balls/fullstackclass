@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카우프 지수</title>
+    <style>
+        .red { background:red; }
+        .orange { background:orange; }
+        .green { background:green; }
+        .gray { background:gray; }
+
+        .toggle { color:darkred; }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('#kbtn').click(function(){
+                var height = parseInt($('#kh').val()) / 100;
+                var weight = parseInt($('#kw').val());
+                var kaup = weight / (height * height);
+                var str = '';
+                // 조건문에는 단순 if 문, if ~ else 문, if ~ else if 문이 있다.
+                // 조건문 중 가장 많이 사용하는 것은 if ~ else if 문이다. if ~ else if 문은 조건을 여러개 설정할 수 있으므로 가장 많이 사용한다.
+                if (kaup >= 35) { // 만약에 가우프 지수값이 35이상이면 ...
+                    str = '고도 비만';
+                    $('body').removeClass();
+                    $('body').addClass('red');
+                    // $('body').toggleClass('red'); // red 클래스명이 있으면 제거하고 없으면 추가한다.
+                } else if (kaup >= 30) { // 만약에 가우프 지수값이 30이상이면 ...
+                    str = '비만';
+                    $('body').removeClass();
+                    $('body').addClass('red');
+                } else if (kaup >= 25) { // 만약에 가우프 지수값이 25이상이면 ...
+                    str = '과체중';
+                    $('body').removeClass();
+                    $('body').addClass('orange');
+                } else if (kaup >= 20) { // 만약에 가우프 지수값이 20이상이면 ...
+                    str = '정상';
+                    $('body').removeClass();
+                    $('body').addClass('green');
+                } else { // 만약에 가우프 지수값이 20미만이면 ...
+                    str = '저체중';
+                    $('body').removeClass();
+                    $('body').addClass('gray');
+                }
+
+                $('#k-result span').text(kaup);
+                $('#k-health span').text(str);
+            });
+
+            $('h3').click(function(){
+                $(this).toggleClass('toggle');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h3>카우프 지수 값에 따른 건강상태</h3>
+    <ul class="kaup">
+        <li><input type="number" placeholder="키(cm) 입력" id="kh" autofocus required></li>
+        <li><input type="number" placeholder="몸무게(kg) 입력" id="kw" required></li>
+        <li><button type="button" id="kbtn">카우프 지수 값 구하기</button></li>
+    </ul>
+    <div id="k-result">카우프 지수 값 : <span></span></div>
+    <div id="k-health">건강상태 : <span></span></div>
+
+    <style>
+        .box {
+            display:flex; justify-content:center; align-items:center;
+            width:300px; height:300px; margin:10px 0;
+            background:orange;
+        }
+    </style>
+    <div class="box big">BIG</div>
+    <div class="box small">SMALL</div>
+    <script>
+        $('.big').click(function(){
+            var w = $(this).width();
+            // big 박스에 클릭 이벤트가 발생하면 big 박스의 너비값을 얻는다.
+            var h = $(this).height();
+            // big 박스에 클릭 이벤트가 발생하면 big 박스의 높이값을 얻는다.
+            w += 50; // w = w + 50; 값을 누적, 값의 총합, 복리 계산
+            h += 50; //h = h + 50;
+
+            $('.big').width(w).height(h); // big 박스에 증가된 너비값과 높이값을 지정한다.
+        });
+
+        $('.small').click(function(){
+            var w = $(this).width();
+            var h = $(this).height();
+            w -= 25; //w = w - 25;
+            h -= 25; //h = h - 25;
+
+            $('.small').width(w).height(h);
+        });
+    </script>
+</body>
+</html>

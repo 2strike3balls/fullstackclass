@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환과 변환</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        ul {
+            list-style:none; /* 블릿 제거 */
+            display:flex; align-items:center; flex-wrap:wrap;
+            width:1000px; margin:50px auto;
+        } 
+        ul li {
+            width:300px; height:300px; margin:100px 50px 0 0;
+            border:10px solid #36f;
+        }
+        ul li:nth-child(3n) { margin:100px 0 0 0; }
+        ul li p {
+            height:100%;
+            font-size:24px; color:#f6f6f6; font-weight:bold;
+            text-align:center; line-height:280px;
+            background:rgba(0, 100, 200, 0.4);
+        }
+
+        li:first-child p { transition:all 0.4s ease-in; }
+        li:first-child:hover p { transform:translateX(-150px); }
+
+        li:nth-child(2) p { transition:all 0.4s ease-in; }
+        li:nth-child(2):hover p { transform:translateY(-150px); }
+
+        li:nth-child(3) p { transition:all 0.4s ease-in; }
+        li:nth-child(3):hover p { transform:translate(150px, -150px); }
+
+        li:nth-child(4) p { transition:all 0.6s ease-in; }
+        li:nth-child(4):hover p { transform:rotate(720deg); }
+
+        li:nth-child(5) p { transition:all 0.2s ease-in; }
+        li:nth-child(5):hover p { transform:scale(2); }
+
+        li:nth-child(6) p { transition:all 0.4s ease-in; }
+        li:nth-child(6):hover p { transform:scaleX(2); }
+
+        li:nth-child(7) p { transition:all 0.4s ease-in; }
+        li:nth-child(7):hover p { transform:scaleY(2); }
+
+        li:nth-child(8) p { transition:all 0.4s ease-in; }
+        li:nth-child(8):hover p { transform:skew(45deg, 25deg); }
+
+        li:nth-child(9) p { transition:all 0.4s ease-in; }
+        li:nth-child(9):hover p { transform:skewX(-45deg); }
+    </style>
+</head>
+<body>
+    <h3>2차원 트랜스폼 함수</h3>
+    <ul>
+        <li><p>translateX()</p></li>
+        <li><p>translateY()</p></li>
+        <li><p>translate()</p></li>
+        <li><p>rotate()</p></li>
+        <li><p>scale()</p></li>
+        <li><p>scaleX()</p></li>
+        <li><p>scaleY()</p></li>
+        <li><p>skew()</p></li>
+        <li><p>skewX()</p></li>
+    </ul>
+
+    <style>
+        .trans {
+            display:flex; justify-content:center; align-items:center;
+            width:300px; height:300px; margin:250px 0;
+            font-size:42px; text-align:center;
+            background:#fc0; opacity:0.4;
+            transition:all 0.4s ease-in;
+        }
+        .trans:hover {
+            opacity:1;
+            transform:translate(300px, 0) scale(1.5) rotate(720deg) skew(-25deg, 0);
+        }
+    </style>
+    <div class="trans">
+        <p>transform</p>
+    </div>
+
+    <style>
+        ul.t3d li {
+            perspective:600px;
+            /* 원근감(박스가 회전하는 반경) : 1. rotate3d()를 사용할 때 적용, 2. 부모요소에 작성 */
+            border:10px solid #fc0;
+        }
+        ul.t3d li p {
+            background:rgba(0, 200, 100, 0.4);
+            transition:all 0.4s ease-in;
+            /* backface-visibility:hidden;  박스의 뒷면을 안보이게 함 */
+            transform-origin:0 0;
+            /* 박스의 기준점 변경, 첫번째 값: x 축, 두번째 값: y축 */
+        }
+
+        ul.t3d li:nth-child(1):hover p { transform:rotate3d(1,0,0,180deg); }
+        ul.t3d li:nth-child(2):hover p { transform:rotate3d(0,1,0,-180deg); }
+        ul.t3d li:nth-child(3):hover p { transform:rotate3d(0,0,1,180deg); }
+        ul.t3d li:nth-child(4):hover p { transform:translateZ(-500px); }
+    </style>
+    <h3>3차원 트랜스폼 함수</h3>
+    <ul class="t3d">
+        <li><p>rotate3d(1,0,0,deg)</p></li>
+        <li><p>rotate3d(0,1,0,deg)</p></li>
+        <li><p>rotate3d(0,0,1,deg)</p></li>
+        <li><p>translateZ()</p></li>
+    </ul>
+</body>
+</html>

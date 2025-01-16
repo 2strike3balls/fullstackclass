@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bxSlider</title>
+    <link rel="stylesheet" href="bxslider/jquery.bxslider.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        img { width:100%; }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="bxslider/jquery.bxslider.js"></script>
+    <script>
+        $(function(){
+            $(".slider").bxSlider({
+                auto:true, // 슬라이드의 자동 실행 여부를 지정
+                autoControls:true, // 플레이, 일시정지 버튼을 활성화한다.
+                pager:false, // 블릿을 비활성화한다.
+                autoHover:true // 슬라이드 이미지에 마우스 오버 시 슬라이드가 정지된다.
+            });
+        });
+      </script>
+</head>
+<body>
+    <div class="slider">
+        <div><img src="imgs/slide1.jpg"></div>
+        <div><img src="imgs/slide2.jpg"></div>
+        <div><img src="imgs/slide3.jpg"></div>
+    </div>
+</body>
+</html>

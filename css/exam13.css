@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+
+li:first-child { background: orange; }
+li:last-child { background: blueviolet; }
+li:nth-child(4) { background: sandybrown; }
+
+/* 짝수(2n), 홀수(2n+1) */
+li:nth-child(2n+1) { background: darkgreen; }

@@ -1,0 +1,84 @@
+<!-- 
+※ 배경 속성
+background: 색상 이미지 반복 위치;
+- 색상 : 색상코드(#06f), rgb(), rgba(0~255, 0~255, 0~255, 0~1)
+- 이미지 : url('이미지 경로')
+- 반복 : repeat(반복,기본값), no-repeat(반복 없음), repeat-x(수평 반복), repeat-y(수직 반복)
+- 위치 : 첫번째 값(left(기본값), center, right), 두번째 값(top(기본값), center, bottom)
+★background-size: cover; 배경 이미지를 박스의 크기에 맞춘다.
+background-attachment: fixed; 배경 이미지를 고정시킨다. 패럴렉스 스크롤링 효과
+
+※ 테두리 속성
+border: 두께 스타일 색상;
+- 두께 : px 단위로 지정
+- 스타일 : solid(실선), dashed(점선), dotted(점)
+- 색상 : 색상코드, rgb()
+border-left 속성
+border-right 속성
+border-top 속성
+border-bottom 속성
+
+border-radius 속성 : 박스의 모서리를 둥글게 처리한다.
+border-radius: 20px; 좌상, 우상, 우하, 좌하 모서리를 둥글게 처리한다.
+'값을 50%로 지정하면 원이 된다.'
+border-radius: 20px 40px; 좌상/우하(20px), 우상/좌하(40px) 모서리를 둥글게 처리한다.
+border-radius: 10px(좌상) 20px(우상) 30px(우하) 40px(좌하);
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경속성+테두리속성+박스그림자속성</title>
+    <style>
+        .box {
+            width:50%; height:300px; margin:50px auto;
+            background:url('imgs/slide.jpg') no-repeat;
+            /* background-size:cover; */
+            background-attachment:fixed;
+            border-left:10px solid #06f; border-right:10px solid #06f; border-radius:0 150px;
+        }
+
+        .outBox {
+            position: relative;
+            width: 300px; height: 300px; margin: 100px auto;
+            background: darkorange; border-radius: 50%;
+            box-shadow: 0 0 0 50px rgba(255,255,255,0.2) inset,
+                0 0 2px #000 inset,
+                0 0 15px #000;
+            transition: all 0.4s ease-in;
+        }
+        .outBox:hover {
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.8) inset,
+                0 0 30px #000 inset,
+                0 0 15px #000;
+        }
+        .inBox {
+            position: absolute; left: 50%; top: 50%;
+            width: 200px; height: 200px;
+            background: darkmagenta; border-radius: 50%;
+            box-shadow: 0 0 0 2px rgba(190,185,100,0.8);
+            transition:all 0.4s ease-in 0.3s;
+            transform: translate(-50%, -50%);
+        }
+        .outBox:hover .inBox {
+            box-shadow: 0 0 0 48px rgba(190,185,100,0.4);
+        }
+
+        .gradient {
+            width: 400px; height: 150px; margin:100px auto;
+            background: linear-gradient(to right, #fc0, orange);
+        }
+
+        .scroll { height:2500px; }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="outBox">
+        <div class="inBox"></div>
+    </div>
+    <div class="gradient"></div>
+    <div class="scroll"></div>
+</body>
+</html>

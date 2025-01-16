@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+input[type="text"] { border: 5px solid blueviolet; }
+input[type="radio"]:checked, input[type="checkbox"]:checked { display: none; }
+input[type="date"] { border: 5px solid rgb(241, 6, 108); }
+
+
+.search-box { display:flex; flex-wrap:wrap; width:350px; margin:50px auto; }
+.search-box input { border:0; outline:0; }
+input[type="search"] {
+    display:block; width:285px; height:40px; margin-right:10px;
+    border-radius:20px; border:2px solid #36f;
+}
+button { width:50px; border:2px solid #36f; }
+
+button:hover { background: lightgreen; border:2px solid darkgreen; }
+input[type="search"]:focus { background:yellow; border:2px solid red; }
